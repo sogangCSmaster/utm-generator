@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="팡고 UTM URI 생성기">
+      <meta name="author" content="Coderthemes">
+      <!-- Favicon icon -->
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <!-- Site Title -->
+      <title>팡고 UTM 코드 생성기</title>
+      <!-- Google fonts -->
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+      <!-- Bootstrap core CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- Animate -->
+      <link href="css/animate.css" rel="stylesheet">
+      <!-- Icon-font -->
+      <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css">
+      <!-- Custom styles for this template -->
+      <link href="css/style.css" rel="stylesheet">
+      <!-- Color css -->
+      <link href="css/colors/default.css" rel="stylesheet">
+      <style>
+         code {
+         background: rgba(0,0,0,.075);
+         border-radius: 2px;
+         color: #000;
+         font-family: Menlo,monospace;
+         font-size: .9em;
+         padding: 2px 5px 1px;
+         }
+         .container {
+         max-width: 1500px;
+         }
+      </style>
+   </head>
+   <body data-spy="scroll" data-target="#navbar-menu">
+      <!-- FEATURES -->
+      <section class="section" id="features">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12 text-center">
+                  <div class="title-box">
+                     <p class="title-alt">UTM Generator</p>
+                     <h3 class="fadeIn animated wow" data-wow-delay=".1s">UTM 코드 생성기</h3>
+                     <div class="border"></div>
+                  </div>
+               </div>
+            </div>
+            <!-- end row -->
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="service-item animated fadeInLeft wow" data-wow-delay=".1s">
+                     <h2 class="mb-4"></h2>
+                     <div class="service-detail">
+                        <h5 class="mt-3">랜딩 페이지 URL 입력 <span style="color: red;">(필수)</span></h5>
+                        <input class="form-control" type="text" placeholder="https://your-website.com" id="uri" required/>
+                     </div>
+                     <div class="service-detail">
+                        <h5 class="mt-3">캠페인 소스 <span style="color: red;">(필수)</span></h5>
+                        <input class="form-control" type="text" placeholder="referrer 구글, 뉴스레터, 페이스북 등등" id="campaignSource" required/>
+                     </div>
+                     <div class="service-detail">
+                        <h5 class="mt-3">캠페인 미디엄 <span style="color: red;">(필수)</span></h5>
+                        <input class="form-control" type="text" placeholder="파워링크, cpc, 배너, 유튜브, 검색, 이메일 등" id="campaignMedium" required/>
+                     </div>
+                     <div class="service-detail">
+                        <h5 class="mt-3">캠페인 이름 <span style="color: red;">(필수)</span></h5>
+                        <input class="form-control" type="text" placeholder="신메뉴 프로모션, 겨울특가 할인 캠페인 등" id="campaignName" required/>
+                     </div>
+                     <div class="service-detail">
+                        <h5 class="mt-3">광고 키워드</h5>
+                        <input class="form-control" type="text" placeholder="광고 검색 키워드 입력 (선택)" id="campaignKeyword" />
+                     </div>
+                     <div class="service-detail">
+                        <h5 class="mt-3">캠페인 컨텐츠</h5>
+                        <input class="form-control" type="text" placeholder="큰배너, 작은배너 등 광고별로 나누기 위해 사용 (선택)" id="campaignContent" />
+                     </div>
+                  </div>
+                  <!-- /service-item -->
+               </div>
+               <!-- /col -->
+               <div class="col-lg-6 animated fadeInRight wow" data-wow-delay=".1s">
+                  <table class="table table-bordered">
+                     <tbody>
+                        <tr>
+                           
+                           <td class="text-center">
+                              캠페인 소스
+                              <p>
+                                 <code>utm_source</code>
+                              </p>
+                           </td>
+                           <td>
+                              <span style="color: red;">필수 요소</span>
+                              <p>
+                                 <code>utm_source</code>를 사용하여 검색 엔진, 뉴스 레터 이름 또는 기타 소스를 식별하십시오.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           
+                           <td class="text-center">
+                              캠페인 미디엄
+                              <p>
+                                 <code>utm_medium</code>
+                              </p>
+                           </td>
+                           <td>
+                              <span style="color: red;">필수 요소</span>
+                              <p>
+                                 이메일 또는 클릭당 비용 (CPC)과 같은 매체를 식별하려면 <code>utm_medium</code>을 사용하십시오.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           
+                           <td class="text-center">
+                              캠페인 이름
+                              <p>
+                                 <code>utm_campaign</code>
+                              </p>
+                           </td>
+                           <td>
+                              <span style="color: red;">필수 요소</span>
+                              <p>
+                                 캠페인 식별을 위해 사용됩니다. <code>utm_campaign</code>을 사용하여 특정 제품 프로모션<br/>또는 전략적 캠페인을 식별하십시오.
+                                 <br/>
+                                 <i>예 : <code>utm_campaign=봄 특가 프로모션</code></i>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           
+                           <td class="text-center">
+                              광고 키워드
+                              <p>
+                                 <code>utm_term</code>
+                              </p>
+                           </td>
+                           <td>
+                              <p>
+                                 유료 검색에 사용됩니다. 이 광고의 키워드를 확인하려면 <code>utm_term</code>을 사용하십시오.
+                                 <br/>
+                                 <i>예 : <code>utm_term=축구화</code></i>
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           
+                           <td class="text-center">
+                              캠페인 컨텐츠
+                              <p>
+                                 <code>utm_content</code>
+                              </p>
+                           </td>
+                           <td>
+                              <p>
+                                 A / B 테스트 및 콘텐츠 타겟팅 광고에 사용됩니다. <code>utm_content</code>를 사용하여<br/>동일한 URL을 가리키는 광고 또는 링크를 구별하십시오.
+                                 <br/>
+                                 <i>예 : <code>로고링크</code> 또는 <code>텍스트링크</code></i>
+                              </p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12 text-center">
+                  <button class="btn btn-primary btn-rounded shadow" id="generate">UTM 코드 생성</button>
+               </div>
+            </div>
+            <div class="row mt-3">
+               <div class="col-lg-12">
+                  <div class="form-group">
+                     <textarea class="form-control" disabled id="utm_code" rows="2"></textarea>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div> <!-- end container -->
+      </section>
+      <!-- js placed at the end of the document so the pages load faster -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/scrollspy.min.js"></script>
+      <!-- Jquery easing -->                                                      
+      <script src="js/jquery.easing.min.js"></script>
+      <script src="js/wow.min.js"></script>
+      <!--sticky header-->
+      <script src="js/jquery.sticky.js"></script>
+      <!--common script for all pages-->
+      <script src="js/jquery.app.js"></script>
+      <script>
+        $(document).ready(function(){
+          $("#generate").on('click', function(){
+          var uri = $("#uri").val();
+          
+          if(!uri){
+            return alert('랜딩페이지 URL을 입력해주세요.');
+          }
+          var campaignSource = $("#campaignSource").val();
+          if(!campaignSource){
+            return alert('캠페인 소스를 입력해주세요.');
+          }
+          var campaignMedium = $("#campaignMedium").val();
+          if(!campaignMedium){
+            return alert('캠페인 미디엄을 입력해주세요.');
+          }
+          var campaignName = $("#campaignName").val();
+          if(!campaignName){
+            return alert('캠페인 이름을 입력해주세요.');
+          }
+          var campaignKeyword = $("#campaignKeyword").val();
+          var campaignContent = $("#campaignContent").val();
+          var qmark = uri.includes('?');
+          if(qmark){
+            uri = uri + "&utm_content=" + campaignName + "&utm_medium=" + campaignMedium + "&utm_source=" + campaignSource;
+            if(campaignKeyword){
+              uri = uri + "&utm_term=" + campaignKeyword;
+            }
+            if(campaignContent){
+              uri = uri + "&utm_content=" + campaignContent;
+            }
+          } else {
+            uri = uri + "?utm_content=" + campaignName + "&utm_medium=" + campaignMedium + "&utm_source=" + campaignSource;
+            if(campaignKeyword){
+              uri = uri + "&utm_term=" + campaignKeyword;
+            }
+            if(campaignContent){
+              uri = uri + "&utm_content=" + campaignContent;
+            }
+          }
+          uri = encodeURI(uri);
+          $("#utm_code").val(uri);
+
+          })
+          $("#utm_code").on('click', function(){
+            var copyText = $("#utm_code").val();
+            if(!copyText || copyText==""){
+              return;
+            }
+            var copyText = document.getElementById("utm_code");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            alert("UTM Code가 복사되었습니다.");
+          })
+        })
+      </script>
+   </body>
+</html>
