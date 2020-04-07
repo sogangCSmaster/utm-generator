@@ -201,6 +201,14 @@
                   </div>
                </div>
             </div>
+            <div class="row mt-1">
+               <div class="col-lg-12">
+                  <h5>접미사 분리</h5>
+                  <div class="form-group">
+                     <textarea class="form-control" disabled id="utm_last" rows="2"></textarea>
+                  </div>
+               </div>
+            </div>
          </div>
          </div> <!-- end container -->
       </section>
@@ -257,7 +265,14 @@
           }
           uri = encodeURI(uri);
           $("#utm_code").val(uri);
-
+          var url = "utm_campaign=" + campaignName + "&utm_medium=" + campaignMedium + "&utm_source=" + campaignSource;
+          if(campaignKeyword){
+            url = url + "&utm_term=" + campaignKeyword;
+          }
+          if(campaignContent){
+             url = url + "&utm_content=" + campaignContent;
+          }
+          $("#utm_last").val(url)
           })
           $("#utm_code").on('click', function(){
             var copyText = $("#utm_code").val();
