@@ -239,7 +239,7 @@
           var campaignContent = $("#campaignContent").val();
           var qmark = uri.includes('?');
           if(qmark){
-            uri = uri + "&utm_content=" + campaignName + "&utm_medium=" + campaignMedium + "&utm_source=" + campaignSource;
+            uri = uri + "&utm_campaign=" + campaignName + "&utm_medium=" + campaignMedium + "&utm_source=" + campaignSource;
             if(campaignKeyword){
               uri = uri + "&utm_term=" + campaignKeyword;
             }
@@ -247,7 +247,7 @@
               uri = uri + "&utm_content=" + campaignContent;
             }
           } else {
-            uri = uri + "?utm_content=" + campaignName + "&utm_medium=" + campaignMedium + "&utm_source=" + campaignSource;
+            uri = uri + "?utm_campaign=" + campaignName + "&utm_medium=" + campaignMedium + "&utm_source=" + campaignSource;
             if(campaignKeyword){
               uri = uri + "&utm_term=" + campaignKeyword;
             }
